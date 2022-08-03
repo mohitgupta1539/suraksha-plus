@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "690988847684",
+    "project_id": "suraksha-plus",
+    "storage_bucket": "suraksha-plus.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:690988847684:android:e983f5c556294c89e6a211",
+        "android_client_info": {
+          "package_name": "com.mohit.suraksha_plus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "690988847684-tdgm21n1iutqjc6nt7p1f1ht0pbmhqv4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCATt6jcPk7wtGNDbPXK2pvp8ntexROf3Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "690988847684-tdgm21n1iutqjc6nt7p1f1ht0pbmhqv4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
