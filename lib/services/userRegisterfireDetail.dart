@@ -24,7 +24,7 @@ class UserManagementCaseUrl {
           if (firebaseUser != null)
           await FirebaseFirestore.instance.collection('users').doc(firebaseUser.uid).get().then((ds) {
             myUrl = ds["wimageurl"];
-         print("Url is :" + myUrl);
+        //  print("Url is :" + myUrl);
          // print(myUid);
           }).catchError((e) {
             print(e);
@@ -51,12 +51,13 @@ class UserManagementCaseUrl {
           if (firebaseUser != null)
           await FirebaseFirestore.instance.collection('users').doc(firebaseUser.uid).get().then((ds) {
             myUrl = ds["pimageurl"];
-         // print("Url is :" + myUrl);
+        //  print("Url is :" + myUrl);
          // print(myUid);
           }).catchError((e) {
             print(e);
             });
           if(myUrl.length < 2) {
+            print(myUrl);
             FirebaseFirestore.instance.collection('users').doc(firebaseUser?.uid).update({"pimageurl": user["imageurl"]})
             // .then((value) => Navigator.push(context, MaterialPageRoute(builder: (context) => MainScreen())))
             .catchError((e) {
@@ -65,7 +66,7 @@ class UserManagementCaseUrl {
             FirebaseFirestore.instance
             .collection('policeDetails')
             .doc(firebaseUser?.uid)
-            .set({'nlongitude': user["nlongitude"],'nlatitude': user["nlatitude"], 'ruid': firebaseUser?.uid, "edetails": user["edetails"], "datetime": user["datetime"], "pimageurl": user["pimageurl"]})
+            .set({'nlongitude': user["nlongitude"],'nlatitude': user["nlatitude"], 'ruid': firebaseUser?.uid, "edetails": user["edetails"], "datetime": user["datetime"], "pimageurl": user["imageurl"]})
             .then((value) => {
               displayToastMessage("Thankyou for Solving this case", context),
               Navigator.push(context, MaterialPageRoute(builder: (context) => MainScreen()))
@@ -92,7 +93,7 @@ class UserManagementCaseUrl {
             FirebaseFirestore.instance
             .collection('firesDetails')
             .doc(firebaseUser?.uid)
-            .set({'nlongitude': user["nlongitude"],'nlatitude': user["nlatitude"], 'ruid': firebaseUser?.uid, "edetails": user["edetails"], "datetime": user["datetime"], "fimageurl": user["fimageurl"]})
+            .set({'nlongitude': user["nlongitude"],'nlatitude': user["nlatitude"], 'ruid': firebaseUser?.uid, "edetails": user["edetails"], "datetime": user["datetime"], "fimageurl": user["imageurl"]})
             .then((value) => {
               displayToastMessage("Thankyou for Solving this case", context),
               Navigator.push(context, MaterialPageRoute(builder: (context) => MainScreen()))
@@ -119,7 +120,7 @@ class UserManagementCaseUrl {
             FirebaseFirestore.instance
             .collection('ambulanceDetails')
             .doc(firebaseUser?.uid)
-            .set({'nlongitude': user["nlongitude"],'nlatitude': user["nlatitude"], 'ruid': firebaseUser?.uid, "edetails": user["edetails"], "datetime": user["datetime"], "aimageurl": user["aimageurl"]})
+            .set({'nlongitude': user["nlongitude"],'nlatitude': user["nlatitude"], 'ruid': firebaseUser?.uid, "edetails": user["edetails"], "datetime": user["datetime"], "aimageurl": user["imageurl"]})
             .then((value) => {
               displayToastMessage("Thankyou for Solving this case", context),
               Navigator.push(context, MaterialPageRoute(builder: (context) => MainScreen()))
@@ -146,7 +147,7 @@ class UserManagementCaseUrl {
             FirebaseFirestore.instance
             .collection('otherDetails')
             .doc(firebaseUser?.uid)
-            .set({'nlongitude': user["nlongitude"],'nlatitude': user["nlatitude"], 'ruid': firebaseUser?.uid, "edetails": user["edetails"], "datetime": user["datetime"], "oimageurl": user["oimageurl"]})
+            .set({'nlongitude': user["nlongitude"],'nlatitude': user["nlatitude"], 'ruid': firebaseUser?.uid, "edetails": user["edetails"], "datetime": user["datetime"], "oimageurl": user["imageurl"]})
             .then((value) => {
               displayToastMessage("Thankyou for Solving this case", context),
               Navigator.push(context, MaterialPageRoute(builder: (context) => MainScreen()))

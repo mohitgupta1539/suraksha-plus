@@ -52,21 +52,22 @@ class _MainScreenState extends State<MainScreen> {
                 height: 165.0,
                 child: DrawerHeader(
                   decoration: BoxDecoration(color: Colors.white),
-                  child: Row(
+                  child: Column(
                     children: [
-                      myImageUrl.length > 2 ? Image.network(myImageUrl, height: 65.0, width: 65.0,) : Image.asset("images/images/user_icon.png", height: 65.0, width: 65.0,),
+                      myImageUrl.length > 2 ? Image.network(myImageUrl, height: 85.0, width: 85.0,) : Image.asset("images/images/user_icon.png", height: 65.0, width: 65.0,),
                       // Image.asset("images/images/user_icon.png", height: 65.0, width: 65.0,),
                       SizedBox(width: 16.0,),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          SizedBox(height: 19.0,),
                           Container(
                             child: FutureBuilder(
                               future: _fetch(),
                               builder: (context, snapshot) {
                                 if (snapshot.connectionState != ConnectionState.done)
                                 return Text("Loading data...Please wait");
-                                return Text("User : $myName", style: TextStyle(fontSize: 12.0, fontFamily: "Brand-Bold"),
+                                return Text("User $myName", style: TextStyle(fontSize: 15.0, fontFamily: "Brand-Bold"),
                                 );
                                 },
                                 ),
@@ -132,33 +133,29 @@ class _MainScreenState extends State<MainScreen> {
 
           // HamburgerButton for Drawer
           Positioned(
-            top: 45.0,
-            left: 22.0,
-            child: GestureDetector(
-              onTap: ()
-              {
-                // scaffoldKey.currentState?.openDrawer();
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  borderRadius: BorderRadius.circular(22.0),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.transparent,
-                      blurRadius: 6.0,
-                      spreadRadius: 0.5,
-                      offset: Offset(0.7, 0.7),
-                    )
-                  ]
-                ),
-                child: CircleAvatar(
-                  backgroundColor: Colors.transparent,
-                  child: Icon(Icons.menu, color: Colors.transparent,),
-                  radius: 20.0,
-                ),
+            child: Column(
+            children: [
+              SizedBox(height: 8.0,),
+              ListTile(
+                leading: Icon(Icons.health_and_safety_sharp),
+                title:Text("This App will help \nto solve the case", style: TextStyle(fontSize: 15.0, fontFamily: "Brand-Bold"),),
               ),
-            ),
+            ],
+          ),
+            // child: GestureDetector(
+            //   onTap: ()
+            //   {
+            //     // scaffoldKey.currentState?.openDrawer();
+            //   },
+            //   child: Container(
+                
+            //     child: CircleAvatar(
+            //       backgroundColor: Colors.blue,
+            //       child: Icon(Icons.menu, color: Colors.blue,),
+            //       radius: 20.0,
+            //     ),
+            //   ),
+            // ),
           ),
 
           Positioned(

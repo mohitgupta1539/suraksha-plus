@@ -160,19 +160,31 @@ class _UserImageState extends State<UserImage> {
 
         SizedBox(height: 5.0,),
         DividerWidget(),
-        if(imageUrl == null) 
-          Icon(Icons.image, size: 150.0, color: Colors.blue[800],),
+        // if(imageUrl == null) 
+          // Icon(Icons.image, size: 150.0, color: Colors.blue[800],),
 
 
           InkWell(
             onTap: () => _selectPhoto(),
             child: Padding(
               padding: EdgeInsets.all(8.0),
-              child: Text(imageUrl != null
+              child: Column(
+                children: [
+                  ListTile(
+                leading: Icon(Icons.image, size: 150.0, color: Colors.blue[800],),
+                title: Text(imageUrl != null
               ? 'Next Case can be uploaded after perious one, Thankyou'
-              : 'Please Take photo \nto Complete Process',
+              : '\nPlease Take photo \nto Complete Process',
               style: TextStyle(color: Colors.blue[900],fontSize: 20.0,),
               ),
+                // title:Text("This App will help \nto solve the case", style: TextStyle(fontSize: 15.0, fontFamily: "Brand-Bold"),),
+              ),
+              ]),
+              // child: Text(imageUrl != null
+              // ? 'Next Case can be uploaded after perious one, Thankyou'
+              // : 'Please Take photo \nto Complete Process',
+              // style: TextStyle(color: Colors.blue[900],fontSize: 20.0,),
+              // ),
             ),
           ),
 
